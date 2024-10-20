@@ -1,14 +1,11 @@
 ---
-apiversion: v1 #version
+apiVersion: v1
 kind: Pod
-metadata:
-  name: activity-2
+metadata: 
+   name: activity-2
 spec:
-  containers:
-    - name: web
-      image: nginx:1.27
-    - name: truck
-      image: alpine
-      args: # cmd to execute
-        - sleep
-        - 1d
+   containers:
+   - name: nginx
+   image: nginx:1.14.2
+   ports:
+   - containers: 80
