@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Pod
 metadata:
-   name: myactivity
+   name: myactivity7
 spec:
   containers:
     - name: web
