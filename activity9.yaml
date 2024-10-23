@@ -1,0 +1,26 @@
+---
+apiVersion: v1
+kind: deployment 
+metadata:
+  name: myactivity9
+  labels:
+    app: web
+spec:
+  replicas: 4
+  selector:
+    matchlabels:
+      app: web
+templete:
+  metadata:
+    labels:
+      app: web
+  spec:
+    containers:
+    - name: web
+      image: docker pull shaikkhajaibrahim/dmtest:1.0
+      ports:
+        containerPort: 80
+
+
+
+  
