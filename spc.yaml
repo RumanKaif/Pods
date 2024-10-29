@@ -1,0 +1,11 @@
+---
+apiVersion: v1.0
+kind: Pod 
+metadata:
+  name: spc
+spec:
+  containers:
+    - name: web
+      image: shaikkhajaibrahim/spcjan2024:1.0
+      ports:
+      - containerPort: 80
