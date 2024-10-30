@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: spc
+  labels:
+    env: dev
+    app: spc
+spec:
+   containers:
+     - name: spc
+       image: shaikkhajaibrahim/spcjan2024:1.0
+       
