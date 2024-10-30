@@ -29,3 +29,15 @@ spec:
             limits:
               memory: "100Mi"
               cpu: "300m"
+          
+---
+apiVersion: v1 
+kind: Service 
+metadata:
+  name: spc-svc
+spec:
+  selector:
+    app.kubernetes.io/name: spc-rs
+  ports:
+  - protocol: TCP
+    port: 80
