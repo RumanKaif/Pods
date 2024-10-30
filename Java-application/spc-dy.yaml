@@ -16,6 +16,7 @@ spec:
         labels:
           app: spc
           env: dev
+          version: v1.6.9
       spec:
         containers:
           - name: pod
