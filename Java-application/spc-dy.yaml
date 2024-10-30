@@ -7,11 +7,12 @@ metadata:
     app: spc
 spec:
   replicas: 2
+  strategy: rollingUpdate
   selector:
-    matchlabels:
+    matchLabels:
       app: spc
       env: dev
-    template:
+  template:
       metadata:
         labels:
           app: spc
