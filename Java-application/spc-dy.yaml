@@ -11,7 +11,7 @@ spec:
     matchlabels:
       app: spc
       env: dev
-  template:
+    template:
       metadata:
         labels:
           app: spc
