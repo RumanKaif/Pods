@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Pod 
 metadata:
-  name: Springpet
+  name: springpet
   labels:
    env: dev
    app: spc
