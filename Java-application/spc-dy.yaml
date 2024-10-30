@@ -4,23 +4,29 @@ kind: Deployment
 metadata:
   name: springpet
   labels:
-    env: dev
     app: spc
 spec:
-  minReadySeconds: 1
-  repicas: 3
-    selector:
-      matchlabels:
-        app: spc
+  repicas: 2
+  selector:
+    matchlabels:
+      app: spc
+      env: dev
   template:
       metadata:
         labels:
           app: spc
+          env: dev
       spec:
         containers:
           - name: pod
             image: shaikkhajaibrahim/spcjan2024:1.0
             ports:
               - containerPort: 8080
-        
+            resources: 
+              requests: 
+                memory: "128Mi"
+                cpu: "100m"
+              limits:
+                memory: "256Mi"
+                cpu: "500m"
   
