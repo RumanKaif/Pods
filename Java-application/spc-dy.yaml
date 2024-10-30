@@ -19,7 +19,7 @@ spec:
           version: v1.6.9
       spec:
         containers:
-          - name: pod
+          - name: spc
             image: shaikkhajaibrahim/spcjan2024:1.0
             ports:
               - containerPort: 8080
