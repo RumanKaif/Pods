@@ -1,31 +1,15 @@
 ---
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Service 
 metadata:
-  name: spc-dy 
+  name: spc-svc
   labels:
     env: dev
     app: spc
-spec: 
-  replicas: 3
+spec:
   selector:
-    matchLabels:
-      app: spc
-  template:
-    metadata:
-      labels:
-        env: dev
-        app: spc
-    spec:
-      containers:
-        - name: spc
-          image: shaikkhajaibrahim/spcjan2024:1.0
-          ports:
-          - containerPort: 8080
-          resources:
-            requests:
-              memory: "24Mi"
-              cpu: "100m"
-            limits:
-              memory: "124Mi"
-              cpu: "500m"
+    env: dev
+    app: spc
+  ports:
+    - port: 8080
+    targetPort: 8080
