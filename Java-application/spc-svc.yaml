@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: service 
 metadata:
-  name: springpet
+  name: spc-svc
   labels:
     app: spc
 spec:

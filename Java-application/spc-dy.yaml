@@ -6,7 +6,7 @@ metadata:
   labels:
     app: spc
 spec:
-  repicas: 2
+  replicas: 2
   selector:
     matchlabels:
       app: spc
