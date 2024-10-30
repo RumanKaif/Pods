@@ -1,0 +1,26 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Springpet-rs
+  labels:
+    env: dev
+    app: spc
+spec:
+  minReadySeconds: 1
+  repicas: 3
+    selector:
+      matchlabels:
+        app: spc
+  template:
+      metadata:
+        labels:
+          app: spc
+      spec:
+        containers:
+          - name: pod
+            image: shaikkhajaibrahim/spcjan2024:1.0
+            ports:
+              - containerPort: 8080
+        
+  

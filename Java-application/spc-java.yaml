@@ -1,0 +1,22 @@
+---
+apiVersion: v1
+kind: Pod 
+metadata:
+  name: Springpet
+  labels:
+   env: dev
+   app: spc
+spec:
+  containers:
+    - name: pod 
+      image: shaikkhajaibrahim/spcjan2024:1.0
+      resources: 
+        requests:
+         memory: "64Mi"
+         cpu: "250m"
+        limits:
+         memory: "256Mi"
+         cpu: "500m"
+      ports:
+        - containerPort: 8080
+         
