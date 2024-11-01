@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: spc-rs 
+  labels:
+    env: dev
+    app: spc
+spec:
+  minReadySeconds: 2
+  replicas: 4
+  selector:
+    matchLabels:
+      app: spc  # This selector must match the labels defined in the pod template
+  template:
+    metadata:
+      labels:
+        app: spc  # This label must match the selector above
+    spec:
+      containers:  # Corrected from 'container' to 'containers'
+        - name: spc
+          image: shaikkhajaibrahim/spcjan2024:1.0
+          resources:  # Corrected from 'resource' to 'resources'
+            requests:
+              memory: "24Mi"
+              cpu: "124m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
