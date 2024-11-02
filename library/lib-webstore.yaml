@@ -39,7 +39,7 @@ kind: Service
 metadata:
   name: lib-webstore-svc
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     app: lib-webstore
   ports:
