@@ -1,0 +1,42 @@
+---
+apiVersion: v1
+kind: Secret 
+metadata:
+  name: usr-db-sec-key
+data: 
+  POSTGRES_USER: dXNlcg==
+  POSTGRES_PASSWORD: cGFzc3dvcmQ=
+  POSTGRES_DB: dXNlcmRi
+
+---
+apiVersion: v1
+kind: Secret 
+metadata:
+  name: usr-svc-sec-key
+data: 
+  DATABASE_URL: 4oCccG9zdGdyZXNxbDovLzpAOjU0MzIv4oCc
+  SECRET_KEY: 4oCYWXRERVZXbkwzNWFBSVAtNXl4ZUxqQVo0OVI5MjAtbU1ORGZ3UHlXVUx1NjNIRnNZem8wZi1MTzJJbnhDOGV1NDI4a+KAmQ==
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: books-db-sec-key
+data:
+  POSTGRES_USER: IHVzZXI=
+  POSTGRES_PASSWORD: cGFzc3dvcmQ=
+  POSTGRES_DB: Ym9va3NkYg==
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: books-svc-sec-key
+data:
+  DATABASE_URL: 4oCccG9zdGdyZXNxbDovLzpAOjU0MzIv4oCc
+  SECRET_KEY: 4oCYWXRERVZXbkwzNWFBSVAtNXl4ZUxqQVo0OVI5MjAtbU1ORGZ3UHlXVUx1NjNIRnNZem8wZi1MTzJJbnhDOGV1NDI4a+KAmQ==
+
+
+
+  
+  
