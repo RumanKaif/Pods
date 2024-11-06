@@ -1,8 +1,9 @@
 ---
-apiVersion: v1.0
+apiVersion: v1
 kind: Namespace
 metadata:
-  name: nginx-ns
+  name: nginx
   labels:
-    app: nginx-ns
+    app: nginx
+
   
