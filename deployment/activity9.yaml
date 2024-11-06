@@ -33,14 +33,14 @@
           ports:
           - containerPort: 80   # Corrected to "containerPort" (case-sensitive)
   
-  ---
-  apiVersion: v1
-  kind: Service
-  metadata:
-    name: web-sv
-  spec:
-    selector:
-      app: web
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-sv
+spec:
+  selector:
+    app: web
     ports:
       - port: 80
         targetPort: 80      # Corrected to "targetPort" (case-sensitive)
