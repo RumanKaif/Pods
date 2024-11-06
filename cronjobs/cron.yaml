@@ -1,0 +1,25 @@
+---
+apiVersion: batch/v1
+kind: CronJob 
+metadata:
+  name: cron-job
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    metadata:
+      labels:
+        app: cron-job
+    spec:
+      template:
+        metadata:
+          labels: 
+            app: cron-job
+        spec:
+          containers:
+          - name: cron-job
+            image: busybox:1.28
+            args:
+              - sleep
+              - 30s
+          restartPolicy: OnFailure
+
