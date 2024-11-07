@@ -2,11 +2,11 @@
 apiVersion: v1
 kind: Pod 
 metadata:
-  name: alpine-Pod
+  name: alpine-pod
   namespace: default
 spec:
   containers:
-    - name: alpine-Pod
+    - name: alpine-pod
       image: alpine 
       ports:
         - containerPort: 8000
