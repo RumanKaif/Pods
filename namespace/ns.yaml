@@ -2,8 +2,8 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: nginx
+  name: qa
   labels:
-    app: nginx
+    app: qa
 
   

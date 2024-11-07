@@ -2,8 +2,8 @@
 apiVersion: v1
 kind: Service 
 metadata: 
-  name: nginx-ns
-  namespace: nginx
+  name: nginx-svc 
+  namespace: qa
 spec:
   type: ClusterIP
   selector: 
