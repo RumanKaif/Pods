@@ -11,4 +11,4 @@ spec:
     - image: nginx 
       name: nginx-ns
       ports:
-      - containerPort: 80
+      - containerPort: 8000
