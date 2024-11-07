@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Pod 
+metadata:
+  name: alpine-ns
+  namespace: default
+spec:
+  containers:
+    - name: alpine-ns
+      image: alpine 
+      ports:
+        - containerPort: 8000
+      args:
+        - sleep
+        - 30s
