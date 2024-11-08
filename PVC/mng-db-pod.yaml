@@ -1,0 +1,29 @@
+---
+apiVersion: v1
+kind: Pod 
+metadata:
+  name: mongo-db
+  labels:
+    env: dev
+    app: mongo-db
+spec:
+  containers:
+    - name: mongo-db
+      image: mongo:latest
+      resources:
+        requests:
+          memory: 128Mi
+          cpu: 250m
+        limits:
+          memory: 256Mi
+          cpu: 500m
+      volumeMounts:
+        - mountPath: /data/db
+          name: volume 
+          readOnly: false
+  volume:
+    name: volume 
+    persistentVolumeClaim:
+      claimName: azure-managed-disk
+
+
