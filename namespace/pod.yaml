@@ -4,6 +4,8 @@ kind: Pod
 metadata:
   name: alpine-pod
   namespace: default
+  labels:
+    app: nginx
 spec:
   containers:
     - name: alpine-pod
@@ -12,4 +14,4 @@ spec:
         - containerPort: 8000
       args:
         - sleep
-        - 30s
+        - 1d
