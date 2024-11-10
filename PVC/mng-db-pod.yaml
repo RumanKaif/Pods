@@ -21,9 +21,9 @@ spec:
         - mountPath: /data/db
           name: volume 
           readOnly: false
-  volume:
-    name: volume 
-    persistentVolumeClaim:
-      claimName: azure-managed-disk
+  volumes:
+    - name: volume 
+      persistentVolumeClaim:
+        claimName: azure-managed-disk
 
 
