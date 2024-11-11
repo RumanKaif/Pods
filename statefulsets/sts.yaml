@@ -37,7 +37,7 @@ spec:
       name: sts 
     spec:
       accessModes: [ "ReadWriteOnce" ]
-      storageClassName: "my-storage"
+      storageClassName: "my-storage-class"
       resources:
         requests:
           storage: 1Gi
