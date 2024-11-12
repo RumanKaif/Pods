@@ -37,7 +37,7 @@ spec:
       name: sts 
     spec:
       accessModes: [ "ReadWriteOnce" ]
-      storageClassName: "my-storage-class"
+      storageClassName: "my-dynamic-storage-class"
       resources:
         requests:
           storage: 1Gi
