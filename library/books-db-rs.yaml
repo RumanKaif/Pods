@@ -17,7 +17,7 @@ spec:
       labels:
         app: books-db
     spec:
-      containers:                     # Corrected from 'container' to 'containers'
+      containers:                     
       - image: postgres:15-alpine
         name: books-db
         env: 
@@ -27,7 +27,7 @@ spec:
             value: password
           - name: POSTGRES_DB
             value: booksdb
-        resources:                    # Corrected from 'resource' to 'resources'
+        resources:                    
           requests:
             memory: 24Mi
             cpu: 100m
