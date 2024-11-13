@@ -47,8 +47,8 @@ spec:
               value: bksdb
           volumeMounts:
             - name: volume 
-              mountPath: /mnt/data
-              subPath: data
+              mountPath: /var/lib/mysql
+              subPath: mysql
   volumeClaimTemplates:
   - metadata:
       name: volume 
