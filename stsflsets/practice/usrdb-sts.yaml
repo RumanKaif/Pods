@@ -45,6 +45,13 @@ spec:
               value: password
             - name: MYSQL_DB
               value: usrdb
+          resources:
+            requests:
+              memory: 64M
+              cpu: 128m 
+            limits:
+              memory: 256M
+              cpu: 500m
           volumeMounts:
             - name: volume 
               mountPath: /var/lib/mysql
