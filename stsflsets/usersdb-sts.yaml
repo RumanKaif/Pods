@@ -2,44 +2,44 @@
 apiVersion: v1 
 kind: Service 
 metadata:
-  name: booksdb-svc
+  name: usr-db-sec-key
 spec:
   ports:
-  - port: 5432
+    - port: 5432
   clusterIP: None
   selector:
-    app: booksdb
+    app: usrdb 
 
 ---
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: booksdb
+  name: usrdb
 spec:
   minReadySeconds: 5
   replicas: 2
   selector:
     matchLabels:
-      app: booksdb
-  serviceName: booksdb-svc
+      app: usrdbdb
+  serviceName: usrdb-svc
   template:
     metadata:
       labels:
-        app: booksdb
+        app: usrdb
     spec:
       containers:
-      - name: booksdb
+      - name: usrdb
         image: postgres:15-alpine
         envFrom:
           - secretRef:
-              name: booksdb-sec-key
+              name: usrdb-sec-key
         env:
           - name:  POSTGRES_USER
             value: user
           - name: POSTGRES_PASSWORD
             value: password
           - name: POSTGRES_DB
-            value: booksdb
+            value: usrdb
         resources:                    
           requests:
             memory: 24Mi
@@ -64,12 +64,5 @@ spec:
           storage: 1Gi
 
 
-
-
-
-
-
-          
-
-
-  
+     
+    
