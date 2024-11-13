@@ -3,7 +3,8 @@ apiVersion: v1
 kind: Secret 
 metadata:
   name: bksdb-sec 
-data: 
+data:
+  MYSQL_ROOT_PASSWORD: rootpassword 
   MYSQL_USER: dXNlcg==
   MYSQL_PASSWORD: cGFzc3dvcmQK
   MYSQL_DB: YmtzZGI=
@@ -13,7 +14,8 @@ apiVersion: v1
 kind: Secret 
 metadata:
   name: usrdb-sec 
-data: 
+data:
+  MYSQL_ROOT_PASSWORD: rootpassword  
   MYSQL_USER: dXNlcg==
   MYSQL_PASSWORD: cGFzc3dvcmQK
   MYSQL_DB: dXNyZGI=
