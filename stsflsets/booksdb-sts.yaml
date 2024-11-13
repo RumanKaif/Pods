@@ -6,7 +6,7 @@ metadata:
 spec:
   ports:
   - port: 80
-  ClusterIP: None
+  clusterIP: None
   selector:
     app: booksdb
 
@@ -31,7 +31,8 @@ spec:
       - name: booksdb
         image: postgres:15-alpine
         envFrom:
-          - secretRef: booksdb-sec-key
+          - secretRef:
+              name: booksdb-sec-key
         env:
           - name:  POSTGRES_USER
             value: user
