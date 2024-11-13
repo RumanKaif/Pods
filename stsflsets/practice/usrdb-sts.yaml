@@ -39,6 +39,8 @@ spec:
             - secretRef:
                 name: usrdb-sec
           env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: rootpassword
             - name: MYSQL_USER
               value: user
             - name: MYSQL_PASSWORD
