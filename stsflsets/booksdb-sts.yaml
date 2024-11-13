@@ -18,6 +18,8 @@ spec:
       containers:
       - name: booksdb
         image: postgres:15-alpine
+        envFrom:
+          - secretRef: booksdb-sec-key
         env:
           - name:  POSTGRES_USER
             value: user
@@ -37,16 +39,16 @@ spec:
         volumeMounts:
         - name: db 
           mountPath: /var/lib/postgresql/data
-    volumeClaimTemplates:
-    - metadata:
-        name: db
-      spec:
-        accessModes:
+  volumeClaimTemplates:
+  - metadata:
+      name: db
+    spec:
+      accessModes:
         - ReadWriteOnce
-        storageClassName: managed
-        resources:
-          requests:
-            storage: 1Gi
+      storageClassName: managed
+      resources:
+        requests:
+          storage: 1Gi
 
 ---
 apiVersion: v1 
