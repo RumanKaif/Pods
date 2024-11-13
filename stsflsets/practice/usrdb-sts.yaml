@@ -49,13 +49,13 @@ spec:
             - name: volume 
               mountPath: /mnt/data
               subPath: data
-    volumeClaimTemplates:
-    - metadata:
-        name: volume 
-      spec:
-        accessModes:
-        - ReadWriteOnce
-        storageClassName: managed
-        resources:
-          requests: 
-            storage: 1Gi
+  volumeClaimTemplates:
+  - metadata:
+      name: volume 
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      storageClassName: managed
+      resources:
+        requests: 
+          storage: 1Gi
