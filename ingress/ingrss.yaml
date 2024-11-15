@@ -4,16 +4,24 @@ kind: Ingress
 metadata:
   name: ingress
 spec:
-  ingressClassName: nginx-example
+  ingressClassName: nginx
   rules:
   - http:
       paths:
-      - path: /testpath
-        pathType: prefix
+      - path: /preschool
+        pathType: Prefix
         backend:
           service:
-            name: test 
+            name: preschool-svc
             port: 
               number: 80
+      - path: /skate 
+        pathType: Prefix
+        backend: 
+          service:
+            name: skate-svc
+            port:
+              number: 80
+
 
             
