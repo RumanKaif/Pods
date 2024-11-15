@@ -1,23 +1,19 @@
 ---
-apiVersion: networking.k8s.io	
-kind: v1
+apiVersion: networking.k8s.io/v1	
+kind: Ingress
 metadata:
   name: ingress
-  labels:
-    env: dev
-    app: ingress 
 spec:
-  defaultBackend:
-    resources:
-      apiGroup: k8s.example.com
-      kind: StorageBucket
-      name: static-assets
+  ingressClassName: nginx-example
   rules:
-    - http:
-        path:
-        - path: /icons
-          pathType: ImplementationSpecific
-          backend:
-            apiGroup: k8s.example.com
-            kind: StorageBucket
-            name: static-assets
+  - http:
+      paths:
+      - path: /testpath
+        pathType: prefix
+        backend:
+          service:
+            name: test 
+            port: 
+              number: 80
+
+            
