@@ -1,0 +1,23 @@
+---
+apiVersion: networking.k8s.io	
+kind: v1
+metadata:
+  name: ingress
+  labels:
+    env: dev
+    app: ingress 
+spec:
+  defaultBackend:
+    resources:
+      apiGroup: k8s.example.com
+      kind: StorageBucket
+      name: static-assets
+  rules:
+    - http:
+        path:
+        - path: /icons
+          pathType:
+          backend:
+            apiGroup: k8s.example.com
+            kind: StorageBucket
+            name: static-assets
