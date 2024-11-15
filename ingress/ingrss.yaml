@@ -16,7 +16,7 @@ spec:
     - http:
         path:
         - path: /icons
-          pathType:
+          pathType: ImplementationSpecific
           backend:
             apiGroup: k8s.example.com
             kind: StorageBucket
