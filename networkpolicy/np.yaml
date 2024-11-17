@@ -1,0 +1,16 @@
+---
+apiVersion: networking.k8s.io/v1 
+kind: NetworkPolicy
+metadata:
+  name: np
+spec:
+   podSelector:
+    matchLabels:
+      db: users
+   policyTypes:
+   - Ingress
+   ingress:
+   - from:
+     - podSelector:
+        matchLabels:
+          app: users
