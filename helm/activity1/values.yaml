@@ -1,0 +1,20 @@
+---
+namespace: web
+replicas: 3
+labels: cap
+image: nginx
+tag: 1.27
+name: web
+ports: 80
+resources:
+  limits:
+    memory: 128Mi
+    cpu: 500m
+
+---
+type: ClusterIP
+port: 
+  - port: 80
+
+---
+namespace: web

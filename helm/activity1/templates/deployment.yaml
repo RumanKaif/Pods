@@ -1,0 +1,34 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-deploy
+  namespace: {{ .Values.namespace }}
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.labels }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.labels }}
+    spec:
+      containers:
+      - image: {{ .Values.image }}:{{ .Values.tag }}
+        name: {{ .Values.name }}
+        ports:
+        - containerPort: {{ .Values.ports }}
+        resources: {{ .Values.resources | toYaml | nindent 10 }}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-svc
+  namespace: {{ .Values.namespace }}
+spec:
+  type: {{ .Values.type }}
+  selector:
+    app: {{ .Values.labels }}
+  ports: {{ .Values.port | toYaml | nindent 4 }}  
