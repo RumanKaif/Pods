@@ -2,6 +2,7 @@
 namespace: web
 replicas: 3
 labels: cap
+template: cap
 image: nginx
 tag: 1.27
 name: web

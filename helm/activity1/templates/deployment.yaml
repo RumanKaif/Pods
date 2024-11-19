@@ -12,7 +12,7 @@ spec:
   template:
     metadata:
       labels:
-        app: {{ .Values.labels }}
+        app: {{ .Values.template }}
     spec:
       containers:
       - image: {{ .Values.image }}:{{ .Values.tag }}
