@@ -31,4 +31,7 @@ spec:
   type: {{ .Values.type }}
   selector:
     app: {{ .Values.labels }}
-  ports: {{ .Values.port | toYaml | nindent 4 }}  
+  ports: 
+    - port: {{ .Values.port }}
+      targetPort: {{ .Values.targetPort }}
+    

@@ -13,8 +13,9 @@ resources:
 
 ---
 type: ClusterIP
-port: 
+ports: 
   - port: 80
+    targetPort: 80
 
 ---
 namespace: web
