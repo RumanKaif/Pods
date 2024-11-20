@@ -32,6 +32,6 @@ spec:
   selector:
     app: {{ .Values.labels }}
   ports: 
-    - port: {{ .Values.port }}
+    - port: {{ .Values.ports }}
       targetPort: {{ .Values.targetPort }}
     
