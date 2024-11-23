@@ -1,0 +1,46 @@
+---
+resources:
+  requests:
+    storage: 5Gi
+accessmodes: 
+ - ReadWriteOnce
+storageclass: managed
+volume:
+  name: web
+containerport: 80
+portname: web
+containers:
+  name: web
+  image: nginx
+  tag: 1.27
+template:
+  app: web
+matchlabels:
+  app: web
+minReadySeconds: 5
+replicas: 3
+namespace: qa
+path: /etc/nginx/nginx.conf
+subpath: nginx.conf
+serviceRef: web
+requests:
+  memory: 256Mi
+  cpu: 500m
+limits:
+  memory: 500Mi
+  cpu: 1000m
+
+---
+name: example-svc
+namespace: qa
+labels: web
+spec:
+ports: 
+- port: 80
+name: web
+type: clusterIP
+selector: 
+app: web
+
+---
+namespace: qa
