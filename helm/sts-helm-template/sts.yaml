@@ -1,0 +1,35 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Values.namespace }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Values.matchlabels.app }}
+  serviceName: {{ .Values.serviceRef}}
+  replicas: {{ .Values.replicas }} 
+  minReadySeconds: {{ .Values.minReadySeconds }} 
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.template.app }}
+    spec:
+      containers:
+      - name: {{ .Values.containers.name }}
+        image: {{ .Values.containers.image }}:{{ .Values.containers.tag }}
+        ports:
+        - containerPort: {{ .Values.containerport }}
+          name: {{ .Values.portname }}
+        volumeMounts:
+        - name: {{ .Values.volume.name }}
+          mountPath: {{ .Values.path }}
+  volumeClaimTemplates:
+  - metadata:
+      name: {{ .Values.volume.name }}
+    spec:
+      accessModes: {{ .Values.accessmodes | toYaml | nindent 6 }} 
+      storageClassName: {{ .Values.storageclass }}
+      resources:
+        requests: {{ .Values.resources.requests | toYaml | nindent 10 }}
